@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'idea'	 // optional, for IntelliJ IDEA project
 }
 
 version '0.1-SNAPSHOT'
@@ -11,5 +12,12 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+    // https://mvnrepository.com/artifact/org.jogamp.joal/joal-main
+    compile group: 'org.jogamp.joal', name: 'joal-main', version: '2.1.1'
+
+}
+
+test {
+    useJUnitPlatform()
 }
